@@ -5,34 +5,38 @@ class Catalogue extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        courses: [
-            {
-                id: 47,
-                name: "Class Name",
-                department: "CSCI",
-                number: "101",
-                professor: "Professor Test",
-                days: "M W F",
-                time: "1 - 1:50 pm"
-            },
-            {
-                id: 100,
-                name: "Class Name 2",
-                department: "CSCI 2",
-                number: "1012",
-                professor: "Professor Test 2",
-                days: "M W F 2",
-                time: "2 - 2:50 pm"
-            }
-        ]
+        courses: []
     }
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+    handleSubmit(event) {
+        let url = 'http://localhost:8080/course-info?department=';
+        url += document.getElementById("department").value;
+        fetch(url)
+            .then(parts => parts.json())
+            .then (parts => {
+                this.setState({
+                    courses: parts
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        event.preventDefault();
+    }
 
   render() {
     return (
     <div >
+        <form onSubmit={this.handleSubmit}>
+            <label>
+                Department
+                <input type="text" id="department" />
+            </label>
+            <input type="submit" value="Submit" />
+        </form>
         <table className="table table-dark">
-            {}
             <thead>
             <tr>
                 <th scope="col">Class Name</th>
@@ -50,7 +54,7 @@ class Catalogue extends Component {
                         <th scope="row">{course.name}</th>
                         <td>{course.department} {course.number}</td>
                         <td>{course.professor}</td>
-                        <td>{course.days} : {course.time}</td>
+                        <td>{course.days} : {course.start} - {course.end} PM</td>
                         <td><button type="button" className="btn btn-success">Register</button></td>
                     </tr>
                 )

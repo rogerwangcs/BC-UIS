@@ -27,12 +27,12 @@ public class CreateCourseTest {
 	public void createCourse() {
 		Course course = new Course();
 		course.setDays("M W F");
-		course.setName("Computer Science I");
-		course.setDepartment("CSCI");
-		course.setNumber("1101");
-		course.setStart("9:00");
-		course.setEnd("9:50");
-		course.setProfessor("Professor Test");
+		course.setName("Calc II");
+		course.setDepartment("MATH");
+		course.setNumber("1102");
+		course.setStart("11:00");
+		course.setEnd("11:50");
+		course.setProfessor("Professor Test 3");
 		course.setDeleted(false);
 
 		courseRepository.save(course);
