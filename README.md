@@ -45,7 +45,7 @@ We're using Github to host our web project. Github basically is a platform for c
  - Html is a markup language, meaning it's used to build the structure and layout of a web page. Fun fact: Mobile platforms such as IOS and Android use very similar markup languages for their view structure.
  - If you are new to html, just take a quick skim through the w3schools html guide and you'll get how html code is structured.
 
-## React (Javascript)
+#### React (Javascript)
 Okay is this part is gonna be kinda advanced stuff, and you don't need to know React or Javascript very well for this project. So basically, javascript is the coding language that makes all the logic happen in a web app, like when you click on a button or fill out a form. React.js is a library created by the brainiacs at Facebook to allow building webapps much easier and more efficent.
 
 We've already seen some React code as we explored and experimented in the React template project we set up in our first meeting.
