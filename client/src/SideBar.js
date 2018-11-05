@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import "./sideBar.css";
 
 class SideBar extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = {};
   }
   render() {
     return (
-    <div>
-      Side Bar.
-    </div>
+      <div className="sideBar centerText">
+        <h1 className="white">Side Bar</h1>
+        {/* Sidebar content goes here */}
+      </div>
     );
   }
 }

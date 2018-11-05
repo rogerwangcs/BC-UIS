@@ -1,0 +1,38 @@
+html {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Roboto;
+}
+
+.white {
+  color: white;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.sideBar {
+  float:left;
+  background-color: darkblue;
+  width:250px;
+  height: 100vh;
+
+  padding: 10px;
+}
+.sideBar > p {
+  color: white;
+}
+
+.searchBar {
+  height: 56px;
+  background-color: gray;
+}
+
+.catalog {
+  margin-left: 250px;
+  padding: 10px;
+}

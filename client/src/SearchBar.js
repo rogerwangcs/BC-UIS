@@ -7,8 +7,11 @@ class SearchBar extends Component {
   }
   render() {
     return (
-    <div>
-      Search Bar
+    <div className="searchBar">
+      <h1>Search Bar</h1>
+
+      {/* Search bar content goes here */}
+
     </div>
     );
   }
