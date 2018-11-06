@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 import "./catalog.css";
-import {
-  Drawer,
-  DrawerHeader,
-  DrawerContent,
-  DrawerTitle,
-  DrawerSubtitle
-} from "@rmwc/drawer";
-
-import { List, ListItem, ListItemPrimaryText } from "@rmwc/list";
 
 class Catalogue extends Component {
   constructor(props) {
@@ -38,20 +29,6 @@ class Catalogue extends Component {
   render() {
     return (
       <div className="catalog">
-        <h1>Course Catalog</h1>
-        <Drawer>
-          <DrawerHeader>
-            <DrawerTitle>DrawerHeader</DrawerTitle>
-            <DrawerSubtitle>Subtitle</DrawerSubtitle>
-          </DrawerHeader>
-          <DrawerContent>
-            <List>
-              <ListItem>Cookies</ListItem>
-              <ListItem>Pizza</ListItem>
-              <ListItem>Icecream</ListItem>
-            </List>
-          </DrawerContent>
-        </Drawer>
         <form onSubmit={this.handleSubmit}>
           <label>
             Department

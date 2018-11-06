@@ -8,8 +8,7 @@ class SideBar extends Component {
   }
   render() {
     return (
-      <div className="sideBar centerText">
-        <h1 className="white">Side Bar</h1>
+      <div className="sideBar">
         {/* Sidebar content goes here */}
       </div>
     );
