@@ -5,19 +5,20 @@ class Catalogue extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      courses: []
+      courses: [
+      ]
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    let url = "http://localhost:8080/course-info?department=";
+    let url = "http://www.eaglevisionapp.com/api/";
     url += document.getElementById("department").value;
     fetch(url)
-      .then(parts => parts.json())
-      .then(parts => {
+      .then(classes => classes.json())
+      .then(classes => {
         this.setState({
-          courses: parts
+          courses: classes.subjectList
         });
       })
       .catch(error => {
@@ -43,6 +44,7 @@ class Catalogue extends Component {
               <th scope="col">Number</th>
               <th scope="col">Professor</th>
               <th scope="col">Time</th>
+                <th scope="col">Open?</th>
               <th scope="col">Register?</th>
             </tr>
           </thead>
@@ -50,14 +52,17 @@ class Catalogue extends Component {
             {this.state.courses.map(function(course) {
               return (
                 <tr>
-                  <th scope="row">{course.name}</th>
+                  <th scope="row">{course.title}</th>
                   <td>
-                    {course.department} {course.number}
+                    {course.code}
                   </td>
-                  <td>{course.professor}</td>
+                  <td>{course.faculties}</td>
                   <td>
-                    {course.days} : {course.start} - {course.end} PM
+                    {course.day} : {course.start} - {course.end}
                   </td>
+                    <td>
+                        {course.alert}
+                    </td>
                   <td>
                     <button type="button" className="btn btn-success">
                       Register
