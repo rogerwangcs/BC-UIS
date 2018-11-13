@@ -31,11 +31,11 @@ class Catalogue extends Component {
     return (
       <div className="catalog">
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Department
-            <input type="text" id="department" />
-          </label>
-          <input type="submit" value="Submit" />
+            <div class="col-md-6">
+                <label>Department Code:</label>
+                <input type="text" class="form-control" id="department" aria-describedby="department" placeholder="Enter Department Code"/>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </div>
         </form>
         <table className="table table-dark">
           <thead>
@@ -44,7 +44,7 @@ class Catalogue extends Component {
               <th scope="col">Number</th>
               <th scope="col">Professor</th>
               <th scope="col">Time</th>
-                <th scope="col">Open?</th>
+                <th scope="col">Status</th>
               <th scope="col">Register?</th>
             </tr>
           </thead>
