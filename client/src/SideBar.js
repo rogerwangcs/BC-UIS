@@ -9,7 +9,7 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sideBar">
-        {/* Sidebar content goes here */}
+        {/* Sidebar content goes herexgsdghsdhg */}
       </div>
     );
   }
