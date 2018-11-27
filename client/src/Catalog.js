@@ -1,41 +1,26 @@
 import React, { Component } from "react";
 import "./catalog.css";
 
+import CourseItem from "./CourseItem";
+
 class Catalogue extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      courses: [
-      ]
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(event) {
-    let url = "http://www.eaglevisionapp.com/api/";
-    url += document.getElementById("department").value;
-    fetch(url)
-      .then(classes => classes.json())
-      .then(classes => {
-        this.setState({
-          courses: classes.subjectList
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    event.preventDefault();
-  }
-
   render() {
     return (
       <div className="catalog">
-        <form onSubmit={this.handleSubmit}>
-            <div class="col-md-6">
-                <label>Department Code:</label>
-                <input type="text" class="form-control" id="department" aria-describedby="department" placeholder="Enter Department Code"/>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </div>
+        <form onSubmit={this.props.getCourses}>
+          <div className="col-md-6">
+            <label>Department Code:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="department"
+              aria-describedby="department"
+              placeholder="Enter Department Code"
+            />
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
         </form>
         <table className="table table-dark">
           <thead>
@@ -44,31 +29,14 @@ class Catalogue extends Component {
               <th scope="col">Number</th>
               <th scope="col">Professor</th>
               <th scope="col">Time</th>
-                <th scope="col">Status</th>
+              <th scope="col">Status</th>
               <th scope="col">Register?</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.courses.map(function(course) {
+            {this.props.courses.map(course => {
               return (
-                <tr>
-                  <th scope="row">{course.title}</th>
-                  <td>
-                    {course.code}
-                  </td>
-                  <td>{course.faculties}</td>
-                  <td>
-                    {course.day} : {course.start} - {course.end}
-                  </td>
-                    <td>
-                        {course.alert}
-                    </td>
-                  <td>
-                    <button type="button" className="btn btn-success">
-                      Register
-                    </button>
-                  </td>
-                </tr>
+                <CourseItem course={course} addCourse={this.props.addCourse} />
               );
             })}
           </tbody>

@@ -9,7 +9,13 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sideBar">
-        {/* Sidebar content goes here */}
+      {this.props.selectedCourses.map(function(course) {
+        return (
+          <div>
+            {course.title}
+          </div>
+        );
+      })}
       </div>
     );
   }

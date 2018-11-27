@@ -16,6 +16,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .sideBar {
+  position: fixed;
   float:left;
   background-color: #3b79dd;
   width:250px;
@@ -32,4 +33,5 @@ h1,h2,h3,h4,h5,h6 {
 
 .catalog {
   margin-left: 250px;
+  height: calc(100vh - 56px);
 }
