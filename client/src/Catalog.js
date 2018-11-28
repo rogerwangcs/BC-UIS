@@ -9,17 +9,19 @@ class Catalogue extends Component {
       <div className="catalog">
         <form onSubmit={this.props.getCourses}>
           <div className="col-md-6">
-            <label>Department Code:</label>
-            <input
-              type="text"
-              className="form-control"
-              id="department"
-              aria-describedby="department"
-              placeholder="Enter Department Code"
-            />
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
+            <h5>Department Code:</h5>
+            <div>
+              <button type="submit" className="submitButton btn btn-primary">
+                Submit
+              </button>
+              <input
+                type="text"
+                className="form-control searchInput"
+                id="department"
+                aria-describedby="department"
+                placeholder="Enter Department Code"
+              />
+            </div>
           </div>
         </form>
         <table className="table table-dark">

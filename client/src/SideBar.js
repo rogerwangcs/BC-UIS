@@ -11,7 +11,7 @@ class SideBar extends Component {
       <div className="sideBar">
       {this.props.selectedCourses.map(function(course) {
         return (
-          <div>
+          <div className="myClass">
             {course.title}
           </div>
         );

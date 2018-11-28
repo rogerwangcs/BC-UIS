@@ -7,6 +7,10 @@ h1,h2,h3,h4,h5,h6 {
   font-family: Roboto;
 }
 
+h5 {
+  color: white;
+}
+
 .white {
   color: white;
 }
@@ -18,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
 .sideBar {
   position: fixed;
   float:left;
-  background-color: #3b79dd;
+  background-color: white;
   width:250px;
   height: 100vh;
 }
@@ -27,11 +31,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .searchBar {
-  height: 56px;
-  border-bottom: 1px solid lightgrey;
+height: 18px;
+background-color: rgb(24, 24, 24);
 }
 
 .catalog {
   margin-left: 250px;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 18px);
+  background-color: rgb(24, 24, 24);
 }
